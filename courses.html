@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الكورسات - منصة كورسات أونلاين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="courses.html" class="active">الكورسات</a>
+                <a href="course-details.html">تفاصيل الكورس</a>
+                <a href="dashboard.html">لوحة التحكم</a>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="register.html" class="btn btn-primary">إنشاء حساب</a>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- القائمة الجانبية للهواتف -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            <button class="close-btn" id="closeNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="courses.html" class="active">الكورسات</a>
+            <a href="course-details.html">تفاصيل الكورس</a>
+            <a href="dashboard.html">لوحة التحكم</a>
+            <hr>
+            <a href="login.html">تسجيل الدخول</a>
+            <a href="register.html">إنشاء حساب</a>
+        </div>
+    </div>
+    
+    <!-- قسم البحث والتصفية -->
+    <section class="courses-header">
+        <div class="container">
+            <div class="courses-header-content">
+                <h1 class="page-title">استكشف الكورسات</h1>
+                <p class="page-description">اختر من بين أكثر من 200 كورس في مختلف المجالات</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="searchInput" placeholder="ابحث عن كورس، مدرس، أو مجال...">
+                        <button id="searchButton" class="btn btn-primary">بحث</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الفلاتر -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="categoryFilter">التصنيف:</label>
+                    <select id="categoryFilter" class="filter-select">
+                        <option value="all">جميع التصنيفات</option>
+                        <option value="web">تطوير الويب</option>
+                        <option value="mobile">تطوير الموبايل</option>
+                        <option value="data">علم البيانات</option>
+                        <option value="design">التصميم</option>
+                        <option value="marketing">التسويق</option>
+                        <option value="business">الأعمال</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="levelFilter">المستوى:</label>
+                    <select id="levelFilter" class="filter-select">
+                        <option value="all">جميع المستويات</option>
+                        <option value="beginner">مبتدئ</option>
+                        <option value="intermediate">متوسط</option>
+                        <option value="advanced">متقدم</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="priceFilter">السعر:</label>
+                    <select id="priceFilter" class="filter-select">
+                        <option value="all">جميع الأسعار</option>
+                        <option value="free">مجاني</option>
+                        <option value="paid">مدفوع</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="sortFilter">الترتيب:</label>
+                    <select id="sortFilter" class="filter-select">
+                        <option value="popular">الأكثر شعبية</option>
+                        <option value="newest">الأحدث</option>
+                        <option value="rating">الأعلى تقييمًا</option>
+                        <option value="price-low">السعر: منخفض إلى مرتفع</option>
+                        <option value="price-high">السعر: مرتفع إلى منخفض</option>
+                    </select>
+                </div>
+                
+                <button id="clearFilters" class="btn btn-outline">إعادة تعيين الفلاتر</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قائمة الكورسات -->
+    <section class="courses-list">
+        <div class="container">
+            <div class="courses-header">
+                <h2 class="section-title">جميع الكورسات <span id="coursesCount">(0)</span></h2>
+                <div class="view-toggle">
+                    <button id="gridView" class="view-btn active"><i class="fas fa-th"></i></button>
+                    <button id="listView" class="view-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+            
+            <!-- حالة التحميل -->
+            <div id="loadingSkeleton" class="skeleton-loading">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+            
+            <!-- الكورسات الفعلية -->
+            <div class="courses-grid" id="coursesGrid">
+                <!-- سيتم ملؤها بواسطة JavaScript -->
+            </div>
+            
+            <!-- حالة عدم العثور على نتائج -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>لم يتم العثور على كورسات</h3>
+                <p>لا توجد كورسات تطابق معايير البحث. حاول تغيير الفلاتر أو مصطلحات البحث.</p>
+                <button id="resetSearch" class="btn btn-primary">عرض جميع الكورسات</button>
+            </div>
+            
+            <!-- الترقيم -->
+            <div class="pagination" id="pagination">
+                <!-- سيتم إنشاؤها بواسطة JavaScript -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الأسئلة الشائعة -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أسئلة شائعة عن الكورسات</h2>
+                <p class="section-description">إجابات على الأسئلة الأكثر شيوعًا</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>كيف يمكنني اختيار الكورس المناسب لي؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>يمكنك استخدام فلاتر البحث لتصفية الكورسات حسب التصنيف، المستوى، السعر، والتقييم. كما يمكنك قراءة تفاصيل كل كورس ومعاينة محتواه قبل الاشتراك.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل يمكنني الحصول على شهادة بعد إتمام الكورس؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، جميع الكورسات المدفوعة تمنح شهادة إتمام معتمدة من المنصة بعد إتمام جميع الدروس والاختبارات بنجاح. الكورسات المجانية لا تمنح شهادات.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>كم مدة صلاحية الوصول للكورس؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>جميع الكورسات تمنح وصولاً مدى الحياة بعد الشراء. يمكنك الوصول للمحتوى في أي وقت وتحميل المواد التعليمية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>هل يمكنني الحصول على استرداد للمال إذا لم يعجبني الكورس؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>نعم، نقدم ضمان استرداد المال لمدة 30 يومًا بعد الشراء إذا لم تكن راضيًا عن المحتوى. يمكنك تقديم طلب الاسترداد من لوحة التحكم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>منصة التعلم</span>
+                    </a>
+                    <p class="footer-description">
+                        منصة التعلم أونلاين الرائدة في الوطن العربي، نقدم كورسات عالية الجودة في مختلف المجالات التقنية والإبداعية.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
+                        <li><a href="course-details.html">تفاصيل الكورس</a></li>
+                        <li><a href="dashboard.html">لوحة التحكم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">المساعدة والدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">النشرة البريدية</h3>
+                    <p class="footer-description">اشترك في نشرتنا البريدية ليصلك كل جديد عن الكورسات والعروض.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="btn btn-primary">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- إشعارات -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
