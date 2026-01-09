@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة كورسات أونلاين - الرئيسية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="courses.html">الكورسات</a>
+                <a href="course-details.html">تفاصيل الكورس</a>
+                <a href="dashboard.html">لوحة التحكم</a>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="register.html" class="btn btn-primary">إنشاء حساب</a>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- القائمة الجانبية للهواتف -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            <button class="close-btn" id="closeNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html" class="active">الرئيسية</a>
+            <a href="courses.html">الكورسات</a>
+            <a href="course-details.html">تفاصيل الكورس</a>
+            <a href="dashboard.html">لوحة التحكم</a>
+            <hr>
+            <a href="login.html">تسجيل الدخول</a>
+            <a href="register.html">إنشاء حساب</a>
+        </div>
+    </div>
+    
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">طور مهاراتك مع أفضل الكورسات أونلاين</h1>
+                <p class="hero-description">
+                    انضم إلى آلاف الطلاب الذين يطورون مهاراتهم مع منصتنا. لدينا أكثر من 200 كورس في مختلف المجالات التقنية والإبداعية.
+                </p>
+                <div class="hero-buttons">
+                    <a href="courses.html" class="btn btn-primary btn-lg">استعرض الكورسات</a>
+                    <a href="#features" class="btn btn-outline btn-lg">اعرف المزيد</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">200+</span>
+                        <span class="stat-label">كورس متاح</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">مدرس محترف</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10,000+</span>
+                        <span class="stat-label">طالب مسجل</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">رضا العملاء</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="طلاب يتعلمون أونلاين">
+            </div>
+        </div>
+    </section>
+    
+    <!-- المميزات -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">لماذا تختار منصتنا؟</h2>
+                <p class="section-description">نوفر لك أفضل تجربة تعليمية أونلاين</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="feature-title">كورسات متنوعة</h3>
+                    <p class="feature-description">
+                        لدينا مجموعة واسعة من الكورسات في مختلف المجالات التقنية والإبداعية والإدارية.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3 class="feature-title">مدرسون محترفون</h3>
+                    <p class="feature-description">
+                        جميع مدرسينا لديهم خبرة عملية واسعة وخبرة في التدريس أونلاين.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="feature-title">شهادات معتمدة</h3>
+                    <p class="feature-description">
+                        احصل على شهادة معتمدة بعد إتمام كل كورس لتضيفها لسيرتك الذاتية.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-clock"></i>
+                    </div>
+                    <h3 class="feature-title">تعلم حسب وقتك</h3>
+                    <p class="feature-description">
+                        تعلم في أي وقت ومن أي مكان، حسب سرعتك الخاصة وتوفر وقتك.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- الكورسات المميزة -->
+    <section class="featured-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الكورسات المميزة</h2>
+                <p class="section-description">استكشف أفضل الكورسات التي يوصي بها طلابنا</p>
+            </div>
+            
+            <div class="courses-grid" id="featuredCoursesGrid">
+                <!-- سيتم ملؤها بواسطة JavaScript -->
+            </div>
+            
+            <div class="text-center">
+                <a href="courses.html" class="btn btn-outline btn-lg">عرض جميع الكورسات</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الشرح -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">كيف تبدأ التعلم معنا؟</h2>
+                <p class="section-description">4 خطوات بسيطة لتبدأ رحلة التعلم</p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">إنشاء حساب</h3>
+                    <p class="step-description">سجل في المنصة ببضع خطوات بسيطة</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">اختيار الكورس</h3>
+                    <p class="step-description">اختر الكورس المناسب لمهاراتك واهتماماتك</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">بدء التعلم</h3>
+                    <p class="step-description">ابدأ في مشاهدة الدروس وإكمال التمارين</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">الحصول على الشهادة</h3>
+                    <p class="step-description">احصل على شهادتك بعد إتمام الكورس بنجاح</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- آراء الطلاب -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">آراء طلابنا</h2>
+                <p class="section-description">ما يقولونه طلابنا عن تجربتهم مع المنصة</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "هذه المنصة غيرت مساري المهني بالكامل! الكورسات كانت واضحة وشاملة وساعدتني في الحصول على وظيفة أحلامي."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="محمد أحمد" class="author-avatar">
+                        <div class="author-info">
+                            <h4 class="author-name">محمد أحمد</h4>
+                            <p class="author-title">مطور ويب</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "جودة المحتوى رائعة والمدرسون محترفون جدًا. أنصح أي شخص يريد تطوير مهاراته التقنية بالانضمام لهذه المنصة."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="سارة خالد" class="author-avatar">
+                        <div class="author-info">
+                            <h4 class="author-name">سارة خالد</h4>
+                            <p class="author-title">مصممة UX/UI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "التجربة كانت ممتازة من البداية للنهاية. الدروس كانت عملية والتطبيقات ساعدتني في فهم المفاهيم بشكل أعمق."
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="علي حسن" class="author-avatar">
+                        <div class="author-info">
+                            <h4 class="author-name">علي حسن</h4>
+                            <p class="author-title">محلل بيانات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- دعوة للاشتراك -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">جاهز لبدء رحلة التعلم؟</h2>
+                <p class="cta-description">
+                    انضم إلى آلاف الطلاب الذين طوروا مهاراتهم وحققوا أهدافهم المهنية مع منصتنا
+                </p>
+                <a href="register.html" class="btn btn-primary btn-lg">ابدأ الآن مجانًا</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>منصة التعلم</span>
+                    </a>
+                    <p class="footer-description">
+                        منصة التعلم أونلاين الرائدة في الوطن العربي، نقدم كورسات عالية الجودة في مختلف المجالات التقنية والإبداعية.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
+                        <li><a href="course-details.html">تفاصيل الكورس</a></li>
+                        <li><a href="dashboard.html">لوحة التحكم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">المساعدة والدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">النشرة البريدية</h3>
+                    <p class="footer-description">اشترك في نشرتنا البريدية ليصلك كل جديد عن الكورسات والعروض.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="btn btn-primary">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- إشعارات (تظهر من JavaScript) -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
