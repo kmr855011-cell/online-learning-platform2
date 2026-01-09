@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب - منصة كورسات أونلاين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="courses.html">الكورسات</a>
+                <a href="course-details.html">تفاصيل الكورس</a>
+                <a href="dashboard.html">لوحة التحكم</a>
+            </div>
+            
+            <div class="nav-auth">
+                <a href="login.html" class="btn btn-outline">تسجيل الدخول</a>
+                <a href="register.html" class="btn btn-primary">إنشاء حساب</a>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- القائمة الجانبية للهواتف -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            <button class="close-btn" id="closeNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="courses.html">الكورسات</a>
+            <a href="course-details.html">تفاصيل الكورس</a>
+            <a href="dashboard.html">لوحة التحكم</a>
+            <hr>
+            <a href="login.html">تسجيل الدخول</a>
+            <a href="register.html" class="active">إنشاء حساب</a>
+        </div>
+    </div>
+    
+    <!-- صفحة التسجيل -->
+    <section class="auth-page">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h1 class="auth-title">إنشاء حساب جديد</h1>
+                    <p class="auth-description">انضم إلى منصتنا وابدأ رحلة التعلم</p>
+                </div>
+                
+                <div class="auth-form-container">
+                    <form class="auth-form" id="registerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">الاسم الأول</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" placeholder="أدخل اسمك الأول" required>
+                                </div>
+                                <div class="error-message" id="firstNameError"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">الاسم الأخير</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" placeholder="أدخل اسمك الأخير" required>
+                                </div>
+                                <div class="error-message" id="lastNameError"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerEmail">البريد الإلكتروني</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="registerEmail" placeholder="أدخل بريدك الإلكتروني" required>
+                            </div>
+                            <div class="error-message" id="registerEmailError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="registerPassword">كلمة المرور</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="registerPassword" placeholder="أنشئ كلمة مرور قوية" required>
+                                <button type="button" class="password-toggle" id="toggleRegisterPassword">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength" id="passwordStrength">
+                                <div class="strength-bar"></div>
+                                <span class="strength-text">قوة كلمة المرور: <span id="strengthText">ضعيفة</span></span>
+                            </div>
+                            <div class="error-message" id="registerPasswordError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirmPassword">تأكيد كلمة المرور</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" placeholder="أعد إدخال كلمة المرور" required>
+                                <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="error-message" id="confirmPasswordError"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف (اختياري)</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
+                            </div>
+                        </div>
+                        
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="termsAgreement" required>
+                                <span class="checkmark"></span>
+                                أوافق على <a href="#">شروط الاستخدام</a> و <a href="#">سياسة الخصوصية</a>
+                            </label>
+                            
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletterSubscription">
+                                <span class="checkmark"></span>
+                                أريد تلقي آخر العروض والأخبار عبر البريد الإلكتروني
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block" id="registerButton">إنشاء حساب</button>
+                        
+                        <div class="auth-divider">
+                            <span>أو</span>
+                        </div>
+                        
+                        <button type="button" class="btn btn-outline btn-block social-btn">
+                            <i class="fab fa-google"></i> التسجيل باستخدام Google
+                        </button>
+                        
+                        <button type="button" class="btn btn-outline btn-block social-btn">
+                            <i class="fab fa-facebook-f"></i> التسجيل باستخدام Facebook
+                        </button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>لديك حساب بالفعل؟ <a href="login.html">سجل دخولك الآن</a></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- مزايا التسجيل -->
+            <div class="auth-benefits">
+                <div class="section-header">
+                    <h2 class="section-title">مزايا الانضمام إلى منصتنا</h2>
+                    <p class="section-description">استفد من جميع المزايا المتاحة للأعضاء</p>
+                </div>
+                
+                <div class="benefits-list">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>وصول إلى جميع الكورسات</h3>
+                            <p>احصل على وصول كامل إلى مكتبتنا الواسعة من الكورسات في مختلف المجالات.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>تتبع التقدم</h3>
+                            <p>تابع تقدمك في كل كورس وحافظ على تركيزك مع لوحة تحكم شخصية.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>شهادات إتمام</h3>
+                            <p>احصل على شهادات معتمدة يمكنك مشاركتها على LinkedIn وإضافتها لسيرتك الذاتية.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>دعم فني متكامل</h3>
+                            <p>استفد من فريق الدعم الفني المتاح على مدار الساعة للإجابة على استفساراتك.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>عروض حصرية</h3>
+                            <p>احصل على عروض حصرية وخصومات على الكورسات الجديدة.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-content">
+                            <h3>مجتمع تعليمي</h3>
+                            <p>انضم إلى مجتمع من المتعلمين وقم بالتواصل وتبادل الخبرات.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>منصة التعلم</span>
+                    </a>
+                    <p class="footer-description">
+                        منصة التعلم أونلاين الرائدة في الوطن العربي، نقدم كورسات عالية الجودة في مختلف المجالات التقنية والإبداعية.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
+                        <li><a href="course-details.html">تفاصيل الكورس</a></li>
+                        <li><a href="dashboard.html">لوحة التحكم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">المساعدة والدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">النشرة البريدية</h3>
+                    <p class="footer-description">اشترك في نشرتنا البريدية ليصلك كل جديد عن الكورسات والعروض.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="btn btn-primary">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- إشعارات -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
