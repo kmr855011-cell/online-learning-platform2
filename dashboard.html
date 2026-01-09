@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - منصة كورسات أونلاين</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html">الرئيسية</a>
+                <a href="courses.html">الكورسات</a>
+                <a href="course-details.html">تفاصيل الكورس</a>
+                <a href="dashboard.html" class="active">لوحة التحكم</a>
+            </div>
+            
+            <div class="nav-auth">
+                <div class="user-dropdown" id="userDropdown">
+                    <button class="user-toggle">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="المستخدم" class="user-avatar">
+                        <span class="user-name">أحمد محمد</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> لوحة التحكم</a>
+                        <a href="#"><i class="fas fa-user"></i> الملف الشخصي</a>
+                        <a href="#"><i class="fas fa-cog"></i> الإعدادات</a>
+                        <hr>
+                        <a href="#" id="logoutButton"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="theme-toggle">
+                <button id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- القائمة الجانبية للهواتف -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>منصة التعلم</span>
+            </a>
+            <button class="close-btn" id="closeNav">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="courses.html">الكورسات</a>
+            <a href="course-details.html">تفاصيل الكورس</a>
+            <a href="dashboard.html" class="active">لوحة التحكم</a>
+            <hr>
+            <a href="#"><i class="fas fa-tachometer-alt"></i> لوحة التحكم</a>
+            <a href="#"><i class="fas fa-user"></i> الملف الشخصي</a>
+            <a href="#"><i class="fas fa-cog"></i> الإعدادات</a>
+            <a href="#" id="logoutButtonMobile"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+        </div>
+    </div>
+    
+    <!-- لوحة التحكم -->
+    <section class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1 class="page-title">لوحة التحكم</h1>
+                <p class="page-description">مرحبًا أحمد، تابع تقدمك وإحصائياتك</p>
+            </div>
+            
+            <div class="dashboard-content">
+                <!-- الشريط الجانبي -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="profile-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="أحمد محمد">
+                            <button class="edit-avatar"><i class="fas fa-camera"></i></button>
+                        </div>
+                        <div class="profile-info">
+                            <h3 class="profile-name">أحمد محمد</h3>
+                            <p class="profile-email">ahmed@example.com</p>
+                            <a href="#" class="btn btn-outline btn-sm">تحرير الملف الشخصي</a>
+                        </div>
+                    </div>
+                    
+                    <nav class="dashboard-nav">
+                        <a href="#" class="nav-item active">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>نظرة عامة</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-play-circle"></i>
+                            <span>كورساتي</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-heart"></i>
+                            <span>المفضلة</span>
+                            <span class="badge">5</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>شهاداتي</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>طلباتي</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-cog"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                        <a href="#" class="nav-item">
+                            <i class="fas fa-question-circle"></i>
+                            <span>المساعدة</span>
+                        </a>
+                    </nav>
+                    
+                    <div class="sidebar-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-fire"></i>
+                            <div class="stat-info">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">يوم متتالي</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="stat-info">
+                                <span class="stat-value">42</span>
+                                <span class="stat-label">ساعة تعلم</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- المحتوى الرئيسي -->
+                <main class="dashboard-main">
+                    <!-- الإحصائيات -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">8</h3>
+                                <p class="stat-label">كورسات مسجلة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">3</h3>
+                                <p class="stat-label">كورسات مكتملة</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">5</h3>
+                                <p class="stat-label">شهادات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-number">92%</h3>
+                                <p class="stat-label">متوسط التقدم</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- كورساتي -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 class="section-title">كورساتي النشطة</h2>
+                            <a href="#" class="btn btn-outline">عرض الكل</a>
+                        </div>
+                        
+                        <div class="my-courses">
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <div class="course-image">
+                                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="React.js">
+                                    </div>
+                                    <div class="course-details">
+                                        <h3 class="course-title">تطوير تطبيقات الويب باستخدام React.js</h3>
+                                        <p class="course-instructor">أحمد محمد • آخر نشاط: منذ يومين</p>
+                                        <div class="course-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 75%"></div>
+                                            </div>
+                                            <span class="progress-text">75% مكتمل</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-actions">
+                                    <a href="course-details.html" class="btn btn-primary">استمر في التعلم</a>
+                                </div>
+                            </div>
+                            
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <div class="course-image">
+                                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="JavaScript">
+                                    </div>
+                                    <div class="course-details">
+                                        <h3 class="course-title">JavaScript المتقدم - ES6 وما بعدها</h3>
+                                        <p class="course-instructor">سارة خالد • آخر نشاط: منذ أسبوع</p>
+                                        <div class="course-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 45%"></div>
+                                            </div>
+                                            <span class="progress-text">45% مكتمل</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-actions">
+                                    <a href="course-details.html" class="btn btn-primary">استمر في التعلم</a>
+                                </div>
+                            </div>
+                            
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <div class="course-image">
+                                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Node.js">
+                                    </div>
+                                    <div class="course-details">
+                                        <h3 class="course-title">تطوير Backend باستخدام Node.js و Express</h3>
+                                        <p class="course-instructor">محمد علي • آخر نشاط: منذ 3 أيام</p>
+                                        <div class="course-progress">
+                                            <div class="progress-bar">
+                                                <div class="progress-fill" style="width: 20%"></div>
+                                            </div>
+                                            <span class="progress-text">20% مكتمل</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-actions">
+                                    <a href="course-details.html" class="btn btn-primary">استمر في التعلم</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- الشهادات والإنجازات -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 class="section-title">شهاداتي الأخيرة</h2>
+                            <a href="#" class="btn btn-outline">عرض الكل</a>
+                        </div>
+                        
+                        <div class="certificates-grid">
+                            <div class="certificate-card">
+                                <div class="certificate-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="certificate-info">
+                                    <h3 class="certificate-title">HTML5 و CSS3 المتقدم</h3>
+                                    <p class="certificate-date">تم الحصول عليها: 15 يونيو 2023</p>
+                                </div>
+                                <a href="#" class="btn btn-outline">عرض الشهادة</a>
+                            </div>
+                            
+                            <div class="certificate-card">
+                                <div class="certificate-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="certificate-info">
+                                    <h3 class="certificate-title">أساسيات JavaScript</h3>
+                                    <p class="certificate-date">تم الحصول عليها: 5 مايو 2023</p>
+                                </div>
+                                <a href="#" class="btn btn-outline">عرض الشهادة</a>
+                            </div>
+                            
+                            <div class="certificate-card">
+                                <div class="certificate-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="certificate-info">
+                                    <h3 class="certificate-title">تصميم واجهات المستخدم UX/UI</h3>
+                                    <p class="certificate-date">تم الحصول عليها: 20 أبريل 2023</p>
+                                </div>
+                                <a href="#" class="btn btn-outline">عرض الشهادة</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- النشاط الأخير -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 class="section-title">النشاط الأخير</h2>
+                        </div>
+                        
+                        <div class="activity-timeline">
+                            <div class="activity-item">
+                                <div class="activity-icon completed">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">أكملت درس "مقدمة إلى React Hooks"</h4>
+                                    <p class="activity-description">في كورس تطوير تطبيقات الويب باستخدام React.js</p>
+                                    <span class="activity-time">منذ ساعتين</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon quiz">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">أكملت اختبار "مصفوفات JavaScript" بنجاح</h4>
+                                    <p class="activity-description">في كورس JavaScript المتقدم - ES6 وما بعدها</p>
+                                    <span class="activity-time">منذ يوم</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon enrolled">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">سجلت في كورس جديد</h4>
+                                    <p class="activity-description">تطوير Backend باستخدام Node.js و Express</p>
+                                    <span class="activity-time">منذ 3 أيام</span>
+                                </div>
+                            </div>
+                            
+                            <div class="activity-item">
+                                <div class="activity-icon certificate">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h4 class="activity-title">حصلت على شهادة إتمام</h4>
+                                    <p class="activity-description">في كورس HTML5 و CSS3 المتقدم</p>
+                                    <span class="activity-time">منذ أسبوع</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- الكورسات المقترحة -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 class="section-title">كورسات مقترحة لك</h2>
+                            <a href="courses.html" class="btn btn-outline">استكشف المزيد</a>
+                        </div>
+                        
+                        <div class="recommended-courses">
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Next.js">
+                                    <div class="course-badge">جديد</div>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">Next.js - الإطار المتقدم لـ React</h3>
+                                    <p class="course-instructor">علي حسن</p>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.9</span>
+                                        <span>(320 تقييم)</span>
+                                    </div>
+                                    <div class="course-price">
+                                        <span class="current-price">$34.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="TypeScript">
+                                    <div class="course-badge">الأكثر شعبية</div>
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">TypeScript للمطورين المتقدمين</h3>
+                                    <p class="course-instructor">محمد خالد</p>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.8</span>
+                                        <span>(450 تقييم)</span>
+                                    </div>
+                                    <div class="course-price">
+                                        <span class="current-price">$29.99</span>
+                                        <span class="original-price">$49.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="course-card">
+                                <div class="course-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Data Science">
+                                </div>
+                                <div class="course-content">
+                                    <h3 class="course-title">علم البيانات باستخدام Python</h3>
+                                    <p class="course-instructor">نورا أحمد</p>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <span>4.7</span>
+                                        <span>(280 تقييم)</span>
+                                    </div>
+                                    <div class="course-price">
+                                        <span class="current-price">$39.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+    
+    <!-- التذييل -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>منصة التعلم</span>
+                    </a>
+                    <p class="footer-description">
+                        منصة التعلم أونلاين الرائدة في الوطن العربي، نقدم كورسات عالية الجودة في مختلف المجالات التقنية والإبداعية.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">روابط سريعة</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="courses.html">الكورسات</a></li>
+                        <li><a href="course-details.html">تفاصيل الكورس</a></li>
+                        <li><a href="dashboard.html">لوحة التحكم</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">المساعدة والدعم</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">سياسة الخصوصية</a></li>
+                        <li><a href="#">شروط الاستخدام</a></li>
+                        <li><a href="#">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">النشرة البريدية</h3>
+                    <p class="footer-description">اشترك في نشرتنا البريدية ليصلك كل جديد عن الكورسات والعروض.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <button type="submit" class="btn btn-primary">اشتراك</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 منصة التعلم. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- إشعارات -->
+    <div id="toastContainer" class="toast-container"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
